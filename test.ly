@@ -1,0 +1,3 @@
+\relative {
+    c'
+}
