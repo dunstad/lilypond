@@ -1,4 +1,6 @@
-dango = \relative c'' { f8( ees aes4) }
+\version "2.18.2"
+
+dango = \relative c'' { f8( ees as4) }
 
 \relative c''' {
     \key aes \major
