@@ -1,17 +1,34 @@
 \version "2.18.2"
 
+cardify =
+#(define-scheme-function
+    (parser location music)
+    (ly:music?)
+    #{
+        \score {
+            \new Staff {
+                \relative c''' {
+                    \key aes \major
+                    $music
+                }
+            }
+            \layout { }
+        }
+    #})
+
 dango = \relative c'' { f8( ees as4) }
 
 \book {
-    \score {
-        \new Staff {
-            \relative c''' {
-                \key aes \major
-                \dango aes( bes) bes( c) aes( ees)
-            }
-        }
-    \layout { }
-    }
+    \cardify \relative c''' {\key aes \major \dango aes( bes) bes( c) aes( ees) }
+    % \score {
+    %     \new Staff {
+    %         \relative c''' {
+    %             \key aes \major
+    %             \dango aes( bes) bes( c) aes( ees)
+    %         }
+    %     }
+    % \layout { }
+    % }
     \score {
         \new Staff {
             \relative c''' {
