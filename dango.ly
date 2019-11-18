@@ -52,22 +52,16 @@ dangoB = \relative c''' {\key aes \major \dango aes( bes) bes( c) aes( ees) }
 
 #(define musicList (list dangoA dangoA))
 #(define musicListOne (map ly:make-score musicList))
-#(define musicListTwo (map ly:make-score (map ly:make-music musicList)))
-#(define musicListThree (map ly:make-music musicList))
+% #(define musicListTwo (map ly:make-score (map  musicList)))
 
-$@musicListOne
+$(first musicListOne)
+\easyHeadsOn
+% $@(map (lambda (music) (ly:make-music #{ \makeEasyScore $music #} )) musicList)
+$(first musicListOne)
+\easyHeadsOff
 
-% $(make-music
-%   'NoteEvent
-%   'articulations
-%   (list (make-music
-%           'ArticulationEvent
-%           'articulation-type
-%           "accent"))
-%   'duration
-%   (ly:make-duration 2 0 1/1)
-%   'pitch
-%   (ly:make-pitch -1 0 0))
+% $@musicListOne
+% $@musicListTwo
 
 % \makeTwoScores \dangoA
 % \makeTwoScores \dangoB
