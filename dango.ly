@@ -45,28 +45,21 @@ dango = \relative c'' { f8( ees as4) }
 
 
 dangoA = \relative c''' {\key aes \major \dango aes( bes) bes( c) aes( ees) }
-dangoB = \relative c''' {\key aes \major \dango aes( bes) bes( c) aes( ees) }
+dangoB = \relative c''' {\key aes \major \dango aes( bes) bes( c8 c) aes4( ees) }
 
 % \makeScore \dangoA
 % \makeEasyScore \dangoB
 
-#(define musicList (list dangoA dangoA))
+#(define musicList (list dangoA dangoB))
 #(define musicListOne (map ly:make-score musicList))
 % 'and' used here to give the lambda the right return value for map
 easyLayout = \layout { \easyHeadsOn }
+midi = \midi { }
 #(define musicListTwo (map (lambda (score) 
-  (and (ly:score-add-output-def! score easyLayout) score)) (map ly:make-score musicList)))
+  (and
+    (ly:score-add-output-def! score easyLayout)
+    (ly:score-add-output-def! score midi) score))
+  (map ly:make-score musicList)))
 
-% $(first musicListOne)
-% \easyHeadsOn
-% $@(map (lambda (music) (ly:make-music #{ \makeEasyScore $music #} )) musicList)
-% $(first musicListOne)
-% \easyHeadsOff
-
-\void \displayScheme \override NoteHead.stencil = #note-head::brew-ez-stencil
-
-% $@musicListOne
+$@musicListOne
 $@musicListTwo
-
-% \makeTwoScores \dangoA
-% \makeTwoScores \dangoB
