@@ -1,14 +1,15 @@
-#(define scorifyMusicList (lambda (musicList) (map ly:make-score musicList)))
+#(define scorifyMusicList (lambda (musicList)
+  (map ly:make-score musicList)))
 
 easyLayout = \layout { \easyHeadsOn }
-midi = \midi { }
+midiOutput = \midi { }
 % 'and' used here to give the lambda the right return value for map
 #(define easyScorifyMusicList (lambda (musicList)
   (map (lambda (score) 
     (and
       (ly:score-add-output-def! score easyLayout)
-      (ly:score-add-output-def! score midi) score))
-    (map ly:make-score musicList))))
+      (ly:score-add-output-def! score midiOutput) score))
+    (scorifyMusicList musicList))))
 
 % https://stackoverflow.com/a/12647024
 #(define (merge listA listB)
@@ -16,7 +17,10 @@ midi = \midi { }
     (if (null? listB) listA
       (cons (car listA) (cons (car listB) (merge (cdr listA) (cdr listB)))))))
 
+#(define bookifyScore (lambda (score)
+  (ly:make-book $defaultpaper $defaultheader score)))
+
 #(define cardifyMusicList (lambda (musicList)
   (merge
-    (scorifyMusicList musicList)
-    (easyScorifyMusicList musicList))))
+    (map bookifyScore (scorifyMusicList musicList))
+    (map bookifyScore (easyScorifyMusicList musicList)))))
