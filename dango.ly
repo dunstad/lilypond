@@ -52,19 +52,21 @@ dangoB = \relative c''' {\key aes \major \dango aes( bes) bes( c) aes( ees) }
 
 #(define musicList (list dangoA dangoA))
 #(define musicListOne (map ly:make-score musicList))
+% 'and' used here to give the lambda the right return value for map
+easyLayout = \layout { \easyHeadsOn }
 #(define musicListTwo (map (lambda (score) 
-  (ly:score-add-output-def! score $defaultlayout)) (map ly:make-score musicList)))
+  (and (ly:score-add-output-def! score easyLayout) score)) (map ly:make-score musicList)))
 
-$(first musicListOne)
-\easyHeadsOn
+% $(first musicListOne)
+% \easyHeadsOn
 % $@(map (lambda (music) (ly:make-music #{ \makeEasyScore $music #} )) musicList)
-$(first musicListOne)
-\easyHeadsOff
+% $(first musicListOne)
+% \easyHeadsOff
 
 \void \displayScheme \override NoteHead.stencil = #note-head::brew-ez-stencil
 
 % $@musicListOne
-% $@musicListTwo
+$@musicListTwo
 
 % \makeTwoScores \dangoA
 % \makeTwoScores \dangoB
