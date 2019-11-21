@@ -13,8 +13,14 @@ Here's an example of how to structure your music file to use cardify:
 $@musicList
 ```
 
-The folder you specify should exist before you run the command. You can leave it out, but it generates a whole mess of files.
+The command below generates all the images for your cards, and midi files to be used later. The folder you specify should exist before you run the command. You can leave it out, but it generates a whole mess of files.
 
 ```
 lilypond -dpreview -o folderName aLilypondFile.ly
+```
+
+Anki doesn't play midi files, so to convert midi to wav with timidity:
+
+```
+for i in *.midi; do timidity "$i" -Ow; done
 ```
