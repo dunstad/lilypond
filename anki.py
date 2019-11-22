@@ -4,7 +4,7 @@ import genanki
 
 my_model = genanki.Model(
   1091735104,
-  'Simple Model with Media',
+  'Sheet Music',
   fields=[
     {'name': 'Score'},
     {'name': 'EasyScore'},
@@ -20,7 +20,7 @@ my_model = genanki.Model(
 
 my_note = genanki.Note(
   model=my_model,
-  fields=['dango.preview.png', 'dango-1.preview.png', 'dango-1.wav'])
+  fields=['<img src="dango.preview.png">', '<img src="dango-1.preview.png">', '[sound:dango-1.wav]'])
 
 my_deck = genanki.Deck(
   2059400110,
