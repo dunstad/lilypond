@@ -2,7 +2,7 @@
 This lets you write bits of music in a scheme list in a .ly file, and turn it into an Anki deck with images of sheet music and generated audio. A folder will be created with the same name as your .ly file.
 
 ```
-./lilyToAnki.sh lilypondFileName
+./lilyToAnki.sh lilypondFileNameWithoutExtension
 ```
 
 The output when run is a .apkg file you can import into Anki.
