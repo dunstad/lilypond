@@ -1,6 +1,5 @@
-# this is just the example code from https://github.com/kerrickstaley/genanki
-
-import genanki
+import genanki, os
+from natsort import natsorted
 
 my_model = genanki.Model(
   1091735104,
@@ -18,20 +17,33 @@ my_model = genanki.Model(
     },
   ])
 
-my_note = genanki.Note(
-  model=my_model,
-  fields=['<img src="dango.preview.png">', '<img src="dango-1.preview.png">', '[sound:dango-1.wav]'])
-
 my_deck = genanki.Deck(
   2059400110,
   'Sight reading')
-
-my_deck.add_note(my_note)
-
 my_package = genanki.Package(my_deck)
-my_package.media_files = [
-  'dango/dango.preview.png',
-  'dango/dango-1.preview.png',
-  'dango/dango-1.wav',
-]
-my_package.write_to_file('output.apkg')
+
+my_package.media_files = []
+folderName = 'dango'
+fileNames = natsorted(filter(lambda s: '.png' in s, os.listdir('dango')))
+fileNames.insert(0, fileNames.pop())
+fileNamePairs = zip(fileNames[::2], fileNames[1::2])
+for scoreFileName, easyScoreFileName in fileNamePairs:
+  wavFileName = easyScoreFileName.split('.')[0] + '.wav'
+  imgTag = '<img src="{0}">'
+  my_note = genanki.Note(
+    model=my_model,
+    fields=[
+      imgTag.format(scoreFileName),
+      imgTag.format(easyScoreFileName),
+      '[sound:{0}]'.format(wavFileName),
+    ]
+  )
+  my_deck.add_note(my_note)
+
+  my_package.media_files.extend([
+    '{0}/{1}'.format(folderName, scoreFileName),
+    '{0}/{1}'.format(folderName, easyScoreFileName),
+    '{0}/{1}'.format(folderName, wavFileName),
+  ])
+
+my_package.write_to_file('{0}.apkg'.format(folderName))

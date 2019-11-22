@@ -24,3 +24,5 @@ Anki doesn't play midi files, so to convert midi to wav with timidity:
 ```
 for i in *.midi; do timidity "$i" -Ow; done
 ```
+
+anki.py uses genanki and natsort, you'll want to install those with pip.
