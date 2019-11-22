@@ -20,8 +20,9 @@ midiOutput = \midi { }
 #(define bookifyScore (lambda (score)
   (ly:make-book $defaultpaper $defaultheader score)))
 
+% set-global-staff-size returns false i guess
 #(define cardifyMusicList (lambda (musicList)
-  (or % set-global-staff-size returns false i guess
+  (or
     (set-global-staff-size 50)
     (merge
       (map bookifyScore (scorifyMusicList musicList))

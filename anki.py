@@ -1,5 +1,7 @@
-import genanki, os
+import genanki, os, sys
 from natsort import natsorted
+
+print('creating anki package file...')
 
 my_model = genanki.Model(
   1091735104,
@@ -23,7 +25,7 @@ my_deck = genanki.Deck(
 my_package = genanki.Package(my_deck)
 
 my_package.media_files = []
-folderName = 'dango'
+folderName = sys.argv[1]
 fileNames = natsorted(filter(lambda s: '.png' in s, os.listdir('dango')))
 fileNames.insert(0, fileNames.pop())
 fileNamePairs = zip(fileNames[::2], fileNames[1::2])
@@ -45,5 +47,7 @@ for scoreFileName, easyScoreFileName in fileNamePairs:
     '{0}/{1}'.format(folderName, easyScoreFileName),
     '{0}/{1}'.format(folderName, wavFileName),
   ])
+
+print('{0}.apkg created.'.format(folderName))
 
 my_package.write_to_file('{0}.apkg'.format(folderName))
