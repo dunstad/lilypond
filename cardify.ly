@@ -21,6 +21,8 @@ midiOutput = \midi { }
   (ly:make-book $defaultpaper $defaultheader score)))
 
 #(define cardifyMusicList (lambda (musicList)
-  (merge
-    (map bookifyScore (scorifyMusicList musicList))
-    (map bookifyScore (easyScorifyMusicList musicList)))))
+  (or % set-global-staff-size returns false i guess
+    (set-global-staff-size 50)
+    (merge
+      (map bookifyScore (scorifyMusicList musicList))
+      (map bookifyScore (easyScorifyMusicList musicList))))))
