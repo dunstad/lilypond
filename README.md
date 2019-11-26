@@ -1,4 +1,4 @@
-![Anki flashcard with sheet music](flashcard_example.png)
+<img src="flashcard_example.png" alt="Anki flashcard with sheet music" width="360px" height="614px">
 
 # Usage
 This lets you write bits of music in a scheme list in a .ly file, and turn it into an Anki deck with images of sheet music and generated audio. A folder will be created with the same name as your .ly file.
