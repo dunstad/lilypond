@@ -33,9 +33,17 @@ nakaYoshi = \relative c'' { bes8(\< ees aes bes)\! }
   #{ \relative c''' { \keyAndTempo \fastDango aes g) } #}
   #{ \relative c'' { \keyAndTempo f4.( f8 g4 aes8 g~ g aes4.) \nakaYoshi } #}
   #{ \relative c \clef bass { \keyAndTempo bes,8( f bes des') ees( bes ees'4) } #}
-
-  #{ \relative c''' { \keyAndTempo < bes f bes, >4(\arpeggio aes8( f~ f aes bes c < ees bes ees, >\arpeggio bes c4 aes g) } #}
+  #{ \relative c \clef bass { \keyAndTempo bes,8( f bes des') ees( bes ees'4) aes,8 ees c' ees, g,( ees' bes'4) } #}
+  #{ \relative c''' { \keyAndTempo < bes bes, >4(   aes8 f~ f aes bes c < ees bes ees, >\arpeggio bes c4 aes ees aes bes) } #}
+  #{ \relative c \clef bass { \keyAndTempo des8( aes' des f des aes des,4) c aes' < aes' ees' > aes  } #}
+  #{ \relative c''' { \keyAndTempo < bes f bes, >4(\arpeggio aes8 f~ f bes aes ees' < c ees, >2) bes8( ees aes bes) } #}
+  #{ \relative c \clef bass { \keyAndTempo des8( aes' des f) des4( aes) f8 c' aes' c < g g, >4( ees) } #}
+  #{ \relative c''' { \keyAndTempo < bes f bes, >4(\arpeggio aes8 f~ f aes bes c < ees bes ees, >\arpeggio bes c4 aes g) } #}
   #{ \relative c \clef bass { \keyAndTempo des4( aes' des f aes2) c4 aes' < g' ees' > aes, } #}
+  #{ \relative c' { \keyAndTempo < f des >2( < g ees >4 aes8 g~ g aes4.) < aes, ees, >2 } #}
+  #{ \relative c \clef bass { \keyAndTempo bes4( bes' ees, g) aes,( ees' c'2) } #}
+  #{ \relative c''' { \keyAndTempo < bes des, bes >8(\arpeggio aes' f aes bes aes ees' c~ c1) } #}
+  #{ \relative c' { \keyAndTempo < aes f des >2\arpeggio aes aes1 } #}
 )))
 % #{ \relative c''' { \keyAndTempo  } #}
 % #{ \relative c \clef bass { \keyAndTempo  } #}
