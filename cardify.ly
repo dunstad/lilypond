@@ -24,6 +24,8 @@ midiOutput = \midi { }
 #(define cardifyMusicList (lambda (musicList)
   (or
     (set-global-staff-size 50)
-    (merge
-      (map bookifyScore (scorifyMusicList musicList))
-      (map bookifyScore (easyScorifyMusicList musicList))))))
+    (and
+      (set-default-paper-size "a0" 'landscape)
+      (merge
+        (map bookifyScore (scorifyMusicList musicList))
+        (map bookifyScore (easyScorifyMusicList musicList)))))))
