@@ -37,23 +37,22 @@ nakaYoshi = \relative c'' { bes8(\< ees aes bes)\! }
   #{ \relative c { \clef bass \keyAndTempo des8( aes' des f des aes des,4) c aes' < aes' ees > aes,  } #}
   #{ \relative c''' { \keyAndTempo < bes f bes, >4(\arpeggio aes8 f~ f bes aes ees' < c ees, >2) bes,8( ees aes bes) } #}
   #{ \relative c''' { \keyAndTempo < bes f bes, >4(\arpeggio aes8 f~ f aes bes c < ees bes ees, >\arpeggio bes c4 aes g) } #}
+  #{ \relative c { \clef bass \keyAndTempo des8( aes' des f) des4( aes) f8 c' aes' c < g g, >4( ees) } #}
+  #{ \relative c { \clef bass \keyAndTempo des8( aes' des f aes2) c,,4 aes' < aes' ees > aes, } #}
+  #{ \relative c'' { \keyAndTempo < f des >2( < g ees >4 aes8 g~ g aes4.) < aes, ees >2 } #}
+  #{ \relative c { \clef bass \keyAndTempo bes4( bes' ees, g) aes,( ees' c'2) } #}
+  #{ \relative c''' { \keyAndTempo < bes des, >8(\arpeggio aes f aes bes aes ees' c~ c1) } #}
+  #{ \relative c'' { \keyAndTempo < aes f >2\arpeggio aes aes1 } #}
+  #{ \relative c''' { \keyAndTempo < bes ees, >8(\arpeggio aes ees aes bes aes ees' c~ c1) } #}
+  #{ \relative c''' { \keyAndTempo < c, ees, >2\arpeggio aes bes( c) } #}
+  #{ \relative c''' { \keyAndTempo < bes ees, >8(\arpeggio aes ees aes bes aes ees' c~ c1) } #}
+  #{ \relative c''' { \keyAndTempo < bes f >8(\arpeggio aes f aes bes aes ees' c~ c2) aes4( bes) } #}
+  #{ \relative c'' { \keyAndTempo < c aes >2\arpeggio aes bes( c) } #}
+  #{ \relative c''' { \keyAndTempo < bes f >8(\arpeggio aes f aes bes aes ees' c~ c2) aes4( bes) } #}
+  #{ \relative c'' { \keyAndTempo < des bes >2\arpeggio aes bes( aes) } #}
+  #{ \relative c''' { \keyAndTempo < ees c >2(\arpeggio < bes g >) < aes f >4( g f ees) } #}
+  #{ \relative c { \clef bass \keyAndTempo f8 c' f c g' c, bes' c, f, c' bes' c, aes' c, g' c, } #}
 )))
-  % #{ \relative c \clef bass { \keyAndTempo des8( aes des' f') des'4( aes) f8 c' aes' c < g' g >4( ees') } #}
-  % #{ \relative c \clef bass { \keyAndTempo des8( aes des' f' aes'2) c4 aes < aes' ees' > aes } #}
-  % #{ \relative c' { \keyAndTempo < f des >2( < g ees >4 aes8 g~ g aes4.) < aes, ees, >2 } #}
-  % #{ \relative c \clef bass { \keyAndTempo bes4( bes' ees, g) aes,( ees' c'2) } #}
-  % #{ \relative c''' { \keyAndTempo < bes des, bes >8(\arpeggio aes' f aes bes aes ees' c~ c1) } #}
-  % #{ \relative c' { \keyAndTempo < aes f des >2\arpeggio aes aes1 } #}
-
-  % #{ \relative c''' { \keyAndTempo < bes ees, >8(\arpeggio aes ees aes bes aes ees' c~ c1) } #}
-  % #{ \relative c''' { \keyAndTempo < c, aes, ees,, c,, >2\arpeggio aes bes( c) } #}
-  % #{ \relative c''' { \keyAndTempo < bes ees >8(\arpeggio aes f aes bes aes ees' c~ c2) aes4( bes) } #}
-  % #{ \relative c''' { \keyAndTempo < bes ees >8(\arpeggio aes ees aes bes aes ees' c~ c1) } #}
-  % #{ \relative c''' { \keyAndTempo < c aes >2\arpeggio aes bes( c) } #}
-  % #{ \relative c''' { \keyAndTempo < bes f >8(\arpeggio aes f aes bes aes ees c~ c2) aes4( bes) } #}
-  % #{ \relative c''' { \keyAndTempo < des bes >2\arpeggio aes bes( aes)  } #}
-  % #{ \relative c''' { \keyAndTempo < ees c >2(\arpeggio < aes g >) < aes f >4( g f ees) } #}
-  % #{ \relative c { \clef bass \keyAndTempo f8 c' f c g' c, bes' c, f, c' bes' c, aes' c, g' c, } #}
 
 % #{ \relative c''' { \keyAndTempo  } #}
 % #{ \relative c { \clef bass \keyAndTempo  } #}
