@@ -1,7 +1,10 @@
+% \include "articulate.ly"
+
 #(define scorifyMusicList (lambda (musicList)
   (map ly:make-score musicList)))
 
 easyLayout = \layout { \easyHeadsOn }
+% midiOutput = \unfoldRepeats \articulate \midi { }
 midiOutput = \midi { }
 % 'and' used here to give the lambda the right return value for map
 #(define easyScorifyMusicList (lambda (musicList)
