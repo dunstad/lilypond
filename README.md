@@ -29,10 +29,10 @@ Here's an example of how to structure your music file to use cardify:
 $@musicList
 ```
 
-The command below generates all the images for your cards, and midi files to be used later. The folder you specify should exist before you run the command. You can leave it out, but it generates a whole mess of files.
+The command below generates all the images for your cards, and midi files to be used later. The folder you specify should exist before you run the command. You can leave it out, but it generates a whole mess of files. If cardify is false, all the music will be in one PDF, which is useful for making sure you entered all the music correctly.
 
 ```
-lilypond -dpreview -o folderName aLilypondFile.ly
+lilypond -dpreview -e '(define cardify #t)' -o folderName aLilypondFile.ly
 ```
 
 Anki doesn't play midi files, so install timidity and use it to convert midi to wav:

@@ -6,8 +6,7 @@ fastDango = \relative c''' { bes4( aes8 f~ f aes bes c ees bes c4 }
 keyAndTempo = { \key aes \major \tempo "Moderato" 4 = 100 }
 nakaYoshi = \relative c'' { bes8(\< ees aes bes)\! }
 
-% #(define musicList (scorifyMusicList (list
-#(define musicList (cardifyMusicList (list
+#(define musicList (makeMusicList (list
   #{ \relative c''' { \keyAndTempo \dango aes4( bes) bes( c) aes( ees) } #}
   #{ \relative c''' { \keyAndTempo \dango aes4( bes) bes( c8 c) aes4( ees) } #}
   #{ \relative c''' { \keyAndTempo \dango aes4( bes) bes( c8 c aes2) } #}

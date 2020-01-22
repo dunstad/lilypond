@@ -32,3 +32,7 @@ midiOutput = \midi { }
       (merge
         (map bookifyScore (scorifyMusicList musicList))
         (map bookifyScore (easyScorifyMusicList musicList)))))))
+
+% use -e '(define cardify #f)' at command line to specify whether to cardify
+#(use-modules (guile-user))
+#(define makeMusicList (if cardify cardifyMusicList scorifyMusicList))

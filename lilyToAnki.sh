@@ -4,7 +4,7 @@ fileName=$1
 
 mkdir -p $fileName
 
-lilypond -dpreview -o $fileName $fileName.ly
+lilypond -dpreview -e '(define cardify #t)' -o $fileName $fileName.ly
 
 for i in $fileName/*.midi; do timidity "$i" -Ow; done
 

@@ -3,8 +3,7 @@
 
 keyAndTempo = { \key aes \major \tempo "Moderato" 4 = 100 }
 
-% #(define musicList (scorifyMusicList (list
-#(define musicList (cardifyMusicList (list
+#(define musicList (makeMusicList (list
   #{ \relative c''' { \keyAndTempo  } #}
 )))
 
