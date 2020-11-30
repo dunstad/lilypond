@@ -26,7 +26,7 @@ my_package = genanki.Package(my_deck)
 
 my_package.media_files = []
 folderName = sys.argv[1]
-fileNames = natsorted(filter(lambda s: '.png' in s, os.listdir('dango')))
+fileNames = natsorted(filter(lambda s: '.png' in s, os.listdir(folderName)))
 fileNames.insert(0, fileNames.pop())
 fileNamePairs = zip(fileNames[::2], fileNames[1::2])
 for scoreFileName, easyScoreFileName in fileNamePairs:
